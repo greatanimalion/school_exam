@@ -1,0 +1,27 @@
+<!-- --><!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册界面</title>
+        <link href="../css/register.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div class="register_">
+            <div class="register_frame">
+                <div class="headline" style="margin-top: 5%;"><h2>注册界面</h2></div>
+                <p>新账号&nbsp;&nbsp;<input value="" name="username" /></p>
+                <p style="margin-bottom: 5%;margin-top: 5%;">新密码&nbsp;&nbsp;<input value="" name="userpassword" type="password"/></p>
+                <p style="margin-bottom: 5%;margin-top: 5%;">邮箱绑定&nbsp;<input value="" name="" id="YOUXIANG" type="tetx"/></p>
+                <button type="button" onclick="post_()">获取验证码</button>
+                <input value="请输入验证码" />
+                <div style="margin-top: 5%;">
+                    <div class="register_button butt"><button type="button"><a href="../../登陆页面/log_html/log.html">返回首页</a></button></div>
+                    <div class="butt"><button type="button"><a class="isPrime" onclick="okRegister()">确认注册</a></button></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../js/register.js"></script>
+    <script src="../../登陆页面/log_js/log.js"></script>
+</html>

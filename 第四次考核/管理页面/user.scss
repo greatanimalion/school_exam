@@ -1,0 +1,143 @@
+html {
+    background-color: rgb(230, 229, 218);
+}
+table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    .tb {
+        th:not(:last-child) {
+            border: 2px black solid;
+            background-color: hsla(19, 36%, 85%, 0.997);
+        }
+    }
+}
+
+.top_mes {
+    padding-top: 20px;
+    margin-bottom: -50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: -35px;
+    .select {
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        border: 2px solid black;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .select:hover {
+        box-shadow: 0 0px 2px 1px black;
+        background-color: rgba(171, 174, 192, 0.6);
+    }
+}
+.indiv {
+    width: 100%;
+    .outframe {
+        position: relative;
+        .inframe1{
+            position:absolute;
+            right: 0;
+            width: 400px;
+            margin: 0 auto;
+            div{
+                margin-bottom: 10px;
+            }
+        }
+        width: 100%;
+        .inframe1{
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .inframe {
+            width: 1000px;
+            margin: 0 auto;
+            height: 400px;
+            div {
+                font-size: 20px;
+                margin-left: 10%;
+                margin-top: 3%;
+            }
+        }
+        #id_bott {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            .Changemes {
+                margin: 0 50px;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 5px;
+                background-color: rgb(230, 229, 223);
+                box-shadow: 0 0 2px 1px black;
+                font-size: 30px;
+                transition: all 0.3s;
+            }
+            .Changemes:hover {
+                background-color: azure;
+            }
+        }
+    }
+}
+.menu_bott {
+    cursor: pointer;
+    margin-top: 30px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    div {
+        margin: 0 30px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        background-color: rgb(230, 229, 223);
+        box-shadow: 0 0 1px 1px black;
+        font-size: 20px;
+        transition: all 0.3s;
+    }
+    div:hover {
+        background-color: antiquewhite;
+    }
+}
+#add_muen_{
+    
+    height: 150px;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 500px;
+    position: relative;
+    div{ 
+        margin-top: 10px;
+        input{
+            position: absolute;
+            right: 20px;
+    }
+    }
+    button{
+        margin-left: 40%;
+        margin-top: 20px;
+    }
+}
+#change_muen_{
+    
+    height: 150px;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 500px;
+    position: relative;
+    div{ 
+        margin-top: 10px;
+        input{
+            position: absolute;
+            right: 20px;
+    }
+    }
+    button{
+        margin-left: 40%;
+        margin-top: 20px;
+    }
+}

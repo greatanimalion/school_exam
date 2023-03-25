@@ -1,0 +1,164 @@
+html {
+  background-color: #e6e5da;
+}
+
+table {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+table .tb th:not(:last-child) {
+  border: 2px black solid;
+  background-color: rgba(231, 212, 203, 0.997);
+}
+
+.top_mes {
+  padding-top: 20px;
+  margin-bottom: -50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: -35px;
+}
+
+.top_mes .select {
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.top_mes .select:hover {
+  box-shadow: 0 0px 2px 1px black;
+  background-color: rgba(171, 174, 192, 0.6);
+}
+
+.indiv {
+  width: 100%;
+}
+
+.indiv .outframe {
+  position: relative;
+  width: 100%;
+}
+
+.indiv .outframe .inframe1 {
+  position: absolute;
+  right: 0;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.indiv .outframe .inframe1 div {
+  margin-bottom: 10px;
+}
+
+.indiv .outframe .inframe1 {
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.indiv .outframe .inframe {
+  width: 1000px;
+  margin: 0 auto;
+  height: 400px;
+}
+
+.indiv .outframe .inframe div {
+  font-size: 20px;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+.indiv .outframe #id_bott {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.indiv .outframe #id_bott .Changemes {
+  margin: 0 50px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e6e5df;
+  box-shadow: 0 0 2px 1px black;
+  font-size: 30px;
+  transition: all 0.3s;
+}
+
+.indiv .outframe #id_bott .Changemes:hover {
+  background-color: azure;
+}
+
+.menu_bott {
+  cursor: pointer;
+  margin-top: 30px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.menu_bott div {
+  margin: 0 30px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e6e5df;
+  box-shadow: 0 0 1px 1px black;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.menu_bott div:hover {
+  background-color: antiquewhite;
+}
+
+#add_muen_ {
+  height: 150px;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 500px;
+  position: relative;
+}
+
+#add_muen_ div {
+  margin-top: 10px;
+}
+
+#add_muen_ div input {
+  position: absolute;
+  right: 20px;
+}
+
+#add_muen_ button {
+  margin-left: 40%;
+  margin-top: 20px;
+}
+
+#change_muen_ {
+  height: 150px;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 500px;
+  position: relative;
+}
+
+#change_muen_ div {
+  margin-top: 10px;
+}
+
+#change_muen_ div input {
+  position: absolute;
+  right: 20px;
+}
+
+#change_muen_ button {
+  margin-left: 40%;
+  margin-top: 20px;
+}

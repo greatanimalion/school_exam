@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐厅管理系统</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="./user.css" rel="stylesheet">
+</head>
+<body>
+    <div class="top_mes">
+        <span class="select s1" onclick="card('s1','indiv')">个人信息</span>
+        <span class="select s2" onclick="card('s2','order')">菜品管理</span>
+        <span class="select s3" onclick="card('s3','change')">订单管理</span>
+    </div>
+    <hr style="margin-top: 50px;height: 2px;background-color: block;" />
+    <div class="indiv hidof">
+        <div class="outframe">
+            <div class="inframe1">
+                <div id="addmes" style="display:none;">
+                    <div style="margin-top: 10px;">性别: &nbsp; <input id="change_sex"></input></div>
+                    <div>年龄: &nbsp; <input id="change_age"></input></div>
+                    <div>用户名:<input id="change_us"></input></div>
+                    <div>用户id:<input id="change_id"></input></div>
+                    <div>电话号:<input id="change_phone"></input></div>
+                    <button onclick="func_change('addmes')" >确认修改？</button>
+                </div>
+            </div>
+            <div class="inframe">
+                <div>性别:</div>
+                <div>年龄:</div>
+                <div>电话:</div>
+                <div>用户id:</div>
+                <div>账号:</div>
+                <div>密码:</div>
+                <div>积分:</div>
+            </div>       
+            <div id="id_bott">
+                <div class="Changemes" id="id_chang" onclick="id_change()">修改信息</div>
+                <div class="Changemes" id="exit" onclick="exit()"> 退出</div>
+            </div>
+        </div>
+    </div>
+    <div class="order hidof">
+        <span id="_page">当前页数:1页1个</span>
+        <input id="page" value="" style="width: 100px;margin-left: 50px;" />
+        <input id="per_page" value="" style="width: 100px;"/> 
+        <button id="Search" onclick="search()">查询</button>
+        <hr />
+        <table>
+            <thead>
+                <tr class="no_">
+                    <th>菜名</th>
+                    <th>价格</th>
+                    <th>描述</th>
+                    <th>类型名称</th>
+                    <th>0：面，1：米，2：饮品，3：水果</th>
+                    <th>id</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody id="table" class="tb tb1"></tbody>
+        </table>
+        <div id="table_change">
+            <div id="table_change"></div>
+        </div>
+        <hr  />
+        <div class="menu_bott">
+            <div id="Add_muen" onclick="displayadd()">增加菜单</div>
+            <div onclick="displaychange()">修改菜单</div>
+        </div>
+        <div id="add_muen_" >
+           <div id="add_muen_name">菜名:<input class="add_muen_name"/></div>
+           <div id="add_muen_price">价格:<input class="add_muen_price"/></div>
+           <div id="add_muen_des">描述:<input class="add_muen_des" /></div>
+           <div id="add_muen_type">类型名称:<input class="add_muen_type" /></div>
+           <div id="add_muen_num">0：面，1：米，2：饮品，3：水果:<input class="add_muen_num"/></div>
+           <button onclick="addconfirm()">确定添加</button>
+        </div>
+        <div id="change_muen_" >
+            <div id="change_muen_name">菜名:<input class="change_muen_name"/></div>
+            <div id="change_muen_price">价格:<input class="change_muen_price"/></div>
+            <div id="change_muen_des">描述:<input class="change_muen_des" /></div>
+            <div id="change_muen_type">类型名称:<input class="change_muen_type" /></div>
+            <div id="change_muen_num">0：面，1：米，2：饮品，3：水果:<input class="change_muen_num"/></div>
+            <div id="change_muen_id">id<input class="change_muen_id"/></div>
+            <button onclick="changeconfirm()">确定修改</button>
+         </div>
+    </div>
+    <div class="change hidof">
+         <span id="_page2">当前页数:1页1个</span>
+         <input id="page2" value="" style="width: 100px;margin-left: 50px;" />
+         <input id="per_page2" value="" style="width: 100px;"/> 
+         <button id="Search2">查询</button>
+         <hr />
+         <table>
+             <thead>
+                 <tr class="no_2">
+                     <th>支付状态</th>
+                     <th>id</th>
+                     <th>账号</th>
+                     <th>电话</th>
+                     <th>时间</th>
+                     <th>更新时间</th>
+                     <th>功能</th>
+                 </tr>
+             </thead>
+             <tbody id="table2" ></tbody>
+         </table>
+         <div id="table_change2">
+         </div>
+         <hr  />
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
