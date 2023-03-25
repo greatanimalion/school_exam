@@ -130,7 +130,7 @@ h1 {
 	width: 50%;
 	overflow: hidden;
 	position: relative;
-	display: inline-block;
+	
 }
 
 .text {
@@ -257,16 +257,16 @@ h1 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,.4);
-	
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .news_img:hover .mask,
 .news_img02:hover .mask,
 .news_img03:hover .mask,
-.news_img04:hover .mask{
+.news_img04:hover .mask {
 	display: block;
 }
+
 .news_img,
 .news_img03 {
 	position: relative;

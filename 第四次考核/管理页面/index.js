@@ -20,17 +20,15 @@ function getAllData(page, per_page) {
                 //``(模板字面量)避免用若干个加号来实现字符串拼接，而改用更为优雅的语法来替代，由${Element}
                 //str = "My name is \"" + name + "\". My age is " + age + ".";    //传统拼接方式
                 // str = My name is "${name}". My age is ${age}.;         //模板字面量方式
-                s += `
-                <tr>
-                     <th>${arr[i].name}</th>
-                     <th>${arr[i].price}元</th>
-                     <th>${arr[i].desc}</th>
-                     <th>${arr[i].typename}</th>
-                     <th>${arr[i].typeid}</th>
-                     <th>${arr[i]._id}</th>
-                     <th><button>删除</button></th>
-                 </tr>
-                `
+                s += 
+                "<tr>"+
+                     "<th>"+arr[i].name+"</th>"+
+                     "<th>"+arr[i].price+"</th>"+
+                     "<th>"+arr[i].desc+"</th>"+
+                     "<th>"+arr[i].typename+"</th>"+
+                     "<th>"+arr[i].typeid+"</th>"+
+                     "<th>"+"<button onclick='delOne(\"" +arr[i]._id +"\")'>删除</button>"+"</th>"
+                 "</tr>"
             }
             table.innerHTML = s;
         },
@@ -39,7 +37,26 @@ function getAllData(page, per_page) {
         }
     })
 }
+function delOne(params) {
+    console.log(params);
+    $.ajax({
+        async: true,
+        type: "post",
+        url: "http://118.195.129.130:3000/food/del",
+        dataType: "JSON",
+        data: {
+            _id:params
+        },
+        success: function(result){
+           console.log(result);
+           alert("修改成功");
+        },
+        error: function(err){
+   console.log(err);
+        }
+    })
 
+}
 //var id_1 = document.getElementById("acount").value;
 var cont = document.getElementsByClassName("hidof");
 for (i = 0; i < cont.length; i++) {
@@ -123,6 +140,8 @@ function func_change(q) {
         success: function (result) {
             console.log(result);
             alert("修改成功");
+            getAllData();
+
         },
         error: function (err) {
             console.log(err);
@@ -223,17 +242,24 @@ function getusers(page, per_page) {
             var Arr = result.data;
             var str = '';
             for (let j = 0; j < Arr.length; j++) {
-                str += `
-                <tr class="tr3">
-                    <th>${Arr[j].pay}</th>
-                    <th>${Arr[j]._id}</th>
-                    <th>${Arr[j].us}</th>
-                    <th>${Arr[j].amount}</th>
-                    <th>${Arr[j].time}</th>
-                    <th>${Arr[j].updatedAt}</th>
-                    <th><button >删除${Arr[j]._id}</th>
-                </tr>
-            `
+                str += 
+                // <tr class="tr3">
+                //     <th>${Arr[j].pay}</th>
+                //     <th>${Arr[j]._id}</th>
+                //     <th>${Arr[j].us}</th>
+                //     <th>${Arr[j].amount}</th>
+                //     <th>${Arr[j].time}</th>
+                //     <th>${Arr[j].updatedAt}</th>
+                //     <th><button onclick="del(${Arr[j]._id})">删除</th>
+                // </tr>
+            "<tr>"+
+            "<th>"+Arr[j].pay+"</th>"+
+            "<th>"+Arr[j]._id+"</th>"+
+            "<th>"+Arr[j].us+"</th>"+
+            "<th>"+Arr[j].amount+"</th>"+
+            "<th>"+Arr[j].updatedAt+"</th>"+
+            "<th>"+"<button onclick='delTwo(\"" +Arr[j]._id +"\")'>删除</button>"+"</th>"
+        "</tr>"
             }
             table2.innerHTML = str;
         },
@@ -243,7 +269,27 @@ function getusers(page, per_page) {
     })
 }
 getusers();
+//删除菜品
+function delTwo(param) {
+    console.log(param);
+    $.ajax({
+        async: true,
+        type: "post",
+        url: "http://118.195.129.130:3000/order/del_order",
+        dataType: "JSON",
+        data: {
+            _id:param
+        },
+        success: function(result){
+           console.log(result);
+           alert("修改成功");
+        },
+        error: function(err){
+   console.log(err);
+        }
+    })
 
+}
 // function myFunction(event) { 
 //     var x = event.target;
 //     console.log(x)
