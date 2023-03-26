@@ -13,7 +13,7 @@ function login(acount, password) {
         success: function (result) {//result:服务器返回的json
             if (result.msg == "登录成功") {
                 alert("登录成功");
-               // localStorage.setItem("pass_Word","12");
+                // localStorage.setItem("pass_Word","12");
                 location.href = "../../管理页面/index.html";
             }
             else {
@@ -25,11 +25,11 @@ function login(acount, password) {
         }
     })
 }
-
 //判断用户账号信息是否跳转网页
 function isPrime() {
     var useraccunt = document.getElementById("acount").value;
     var userpasswoed = document.getElementById("password").value;
+    localStorage.setItem("passworld", useraccunt);
     login(useraccunt, userpasswoed);
 
 }

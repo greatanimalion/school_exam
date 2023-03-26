@@ -76,6 +76,24 @@ function search() {
     document.getElementById("_page").innerHTML = `当前页数:${page}页${per_page}个`
 }
 
+//请求log页面的uesr查询id
+let userid;
+$.ajax({
+    async: true,
+    type: "post",
+    url: "http://118.195.129.130:3000/users/getInfoByKw_users",
+    dataType: "JSON",
+    data: {
+        kw:localStorage.getItem("passworld")
+    },
+    success:function(result){
+        userid=result.data[0]._id
+      //  alert(userid);
+        console.log(userid)
+    }
+
+})
+
 //置顶标签选着
 function card(ent, classname) {
     let i, temp;
@@ -89,7 +107,7 @@ function card(ent, classname) {
         url: "http://118.195.129.130:3000/user/inquire",
         dataType: "JSON",
         data: {
-            "_id": "638f5ac745276709b51223ef"
+            "_id": userid
         },
         success: function (result) {
             console.log(result);
@@ -110,7 +128,7 @@ function card(ent, classname) {
 }
 
 //显示个人主页
-card('s1', 'indiv');
+card('s2', 'order');
 
 //用户修改信息显示
 function id_change() {
@@ -140,7 +158,7 @@ function func_change(q) {
         success: function (result) {
             console.log(result);
             alert("修改成功");
-            getAllData();
+            getAllData(1,10);
 
         },
         error: function (err) {
@@ -182,10 +200,13 @@ function addconfirm() {
         },
         success: function (result) {
             console.log(result);
+            alert("添加成功");
             display_add.style.display = "none";
+
         },
         error: function (err) {
             console.log(err);
+            alert("添加失败")
         }
     })
 }
@@ -257,6 +278,7 @@ function getusers(page, per_page) {
             "<th>"+Arr[j]._id+"</th>"+
             "<th>"+Arr[j].us+"</th>"+
             "<th>"+Arr[j].amount+"</th>"+
+            "<th>"+Arr[j].time+"</th>"+
             "<th>"+Arr[j].updatedAt+"</th>"+
             "<th>"+"<button onclick='delTwo(\"" +Arr[j]._id +"\")'>删除</button>"+"</th>"
         "</tr>"
